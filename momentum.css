@@ -1,0 +1,115 @@
+*{
+    box-sizing: border-box;
+    /* font-size: 100%; */
+}
+p{
+    font-size: 16px;
+}
+body { 
+    /* background: url(images/bg.jpg) no-repeat center center fixed;  */
+    background : no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-shadow: 0px 0px 20px #aaaaaa;
+  }
+
+ #flex{
+     padding: 15px;
+     display: flex;
+     flex-direction: column;
+     justify-content : space-between;
+     height: 100vh;    
+}
+ 
+.top {
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid black; */
+}
+.time{
+    text-align: center;
+    /* border: 1px solid black; */
+    margin-bottom: 12%;
+    font-size: 4.5rem;
+}
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid black; */
+}
+.bottom a{
+    color: white;
+    text-decoration-line: none;
+}
+#crypto{
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#crypto span{
+    margin-left: 10px;
+}
+#aux {
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+}
+#stats{
+    margin: 10px 0;
+}
+#stats p{
+    margin: 1px;
+}
+
+#forecast {
+    /* border: 1px solid white; */
+    /* padding: 10px; */
+    display: flex;
+    align-items: flex-start;
+    /* align-items: center; */
+    justify-content: center;
+}
+#icon img{
+    width: 75px;
+}
+
+#weather {
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#weather h1,p {
+    margin:  0;
+    padding: 0;
+}
+#weather p {
+    font-size: 1.1rem;
+}
+
+#location {
+   margin: 0 auto;
+}
+
+#center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 160px;
+}
+#center p,h1{
+    margin: 0;
+    padding: 0;
+}
+#center #quote{
+    margin-top: -20px;
+}
+
