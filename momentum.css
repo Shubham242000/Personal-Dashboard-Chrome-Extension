@@ -43,9 +43,13 @@ body {
     /* border: 1px solid black; */
 }
 .bottom a{
+    font-size: 14px;
     color: white;
     text-decoration-line: none;
 }
+#author , #location {
+    font-size: 14px;
+} 
 #crypto{
     font-size: 1.3rem;
     display: flex;
@@ -110,6 +114,7 @@ body {
     padding: 0;
 }
 #center #quote{
+    font-size: 18px;
     margin-top: -20px;
 }
 
