@@ -9,7 +9,7 @@ const defaultBackground = `https://apis.scrimba.com/unsplash/photos/random?orien
 const defaulAuthor = 'Fabian Quintero';
 
 
-let imagequery , nestedimagequery;
+// let imagequery , nestedimagequery;
 
 
 
@@ -46,7 +46,7 @@ if (navigator.geolocation) (
 
 //Getting the Image from UNSPLASH API
 
-fetch(`https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=nature&wild&ocean&rain&peace&${imagequery}&${nestedimagequery}}`)
+fetch(`https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=nature&water&mountains&desert}`)
 .then(res => res.json())
 .then(data => {
     // console.log(data)
