@@ -1,3 +1,4 @@
+// const { METHODS } = require("http");
 
 const author = document.getElementById('author');
 const place = document.getElementById('location');
@@ -9,7 +10,7 @@ const defaultBackground = `https://apis.scrimba.com/unsplash/photos/random?orien
 const defaulAuthor = 'Fabian Quintero';
 
 
-// let imagequery , nestedimagequery;
+let imagequery , nestedimagequery;
 
 
 
@@ -61,25 +62,61 @@ fetch(`https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&que
 
 //Fetching Real Time data of Coins
 
-fetch('https://api.coingecko.com/api/v3/coins/dogecoin')
-.then(res => {
-    if(!res.ok) throw Error('Something went wrong');
-    return res.json()
-})
+fetch('https://api.coingecko.com/api/v3/coins/list')
+.then(res => res.json())
 .then(data => {
-  
-    crypto.innerHTML = `
+    // console.log(data)
+
+    let ind = Math.floor(Math.random()*(data.length)) + 1;
+    // console.log(ind)
+    // console.log(data[ind].id)
+    fetch(`https://api.coingecko.com/api/v3/coins/${data[ind].id}`)
+    .then(res => res.json())
+    .then(data => {
+
+        crypto.innerHTML = `
         <img src = '${data.image.small}' />
         <span>${data.name}</span>
-    `
-    stats.innerHTML = `
-       <p>🎯 : ₹${data.market_data.current_price.inr} </p>
-       <p>☝️ : ₹${data.market_data.high_24h.inr}</p>
-       <p>👇 : ₹${data.market_data.low_24h.inr}</p>
-    `
+         `
+        stats.innerHTML = `
+        <p>🎯 : ₹${data.market_data.current_price.inr} </p>
+        <p>☝️ : ₹${data.market_data.high_24h.inr}</p>
+        <p>👇 : ₹${data.market_data.low_24h.inr}</p>
+        `
 
-})
-.catch(err => console.log(err))
+        
+    })
+  
+});
+
+
+// fetch('https://api.coingecko.com/api/v3/coins/list' , {
+//     mode : "no-cors"
+// })
+// .then(res => res.json())
+// .then(data => {
+//         console.log(data)
+//         let ind = Math.floor(Math.random * 1000) + 1;
+//         fetch(`https://api.coingecko.com/api/v3/coins/${data[ind].id}`)
+//         .then(res => {
+//             if(!res.ok) throw Error('Something went wrong');
+//             return res.json()
+//         })
+//         .then(data1 => {
+        
+//             crypto.innerHTML = `
+//                 <img src = '${data1.image.small}' />
+//                 <span>${data1.name}</span>
+//             `
+//             stats.innerHTML = `
+//             <p>🎯 : ₹${data1.market_data.current_price.inr} </p>
+//             <p>☝️ : ₹${data1.market_data.high_24h.inr}</p>
+//             <p>👇 : ₹${data1.market_data.low_24h.inr}</p>
+//             `
+
+//         })
+// })
+// .catch(err => console.log(err))
 
  //Displaying Real Time
 setInterval(() => {  
@@ -104,3 +141,4 @@ fetch("https://type.fit/api/quotes")
         <p> ${data[ind].text} </p>
     `;
 })
+
